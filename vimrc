@@ -4,51 +4,36 @@
 " "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Plugins
-" ├── ack.vim
-" ├── ctrlp.vim
-" ├── gundo.vim
-" ├── kwbd.vim
-" ├── mustache.vim
-" ├── nerdcommenter
-" ├── nerdtree
-" ├── sexy_scroller.vim
-" ├── syntastic
-" ├── tabular
-" ├── tagbar
-" ├── tlib_vim
-" ├── ultisnips
-" ├── vim-addon-mw-utils
-" ├── vim-airline
-" ├── vim-coloresque
-" ├── vim-fugitive
-" ├── vim-javascript
-" ├── vim-less
-" ├── vim-markdown
-" ├── vim-startify
-" ├── vimwiki
-" ├── zencoding-vim
-" └── ZoomWin
+
+set nocompatible   " be iMproved, required for Vundle
+filetype off       " required for Vundle
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+"Documentation for adding plugins -  https://github.com/gmarik/Vundle.vim
+Plugin 'gmarik/Vundle.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
 
 
 
-" The best color scheme in the world "{{{
-"colorscheme zenburn
-"let g:zenburn_high_Contrast = 1 " more contrast
-"}}}
-
-" https://github.com/tpope/vim-pathogen
-execute pathogen#infect()
-syntax on
-filetype plugin indent on
-
-
-" Turn on syntax highlighting "{{{
-syn on
-"}}}
-
-
-"#set mouse=a
 set expandtab "Indent with spaces
 set tabstop=4
 set shiftwidth=4
@@ -57,5 +42,4 @@ set softtabstop=4
 set number
 
 
-" Fugative git settings
-" set statusline +=  %{fugitive#statusline()}
+
