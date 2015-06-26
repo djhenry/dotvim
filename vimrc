@@ -14,6 +14,7 @@ call vundle#begin()
 "Documentation for adding plugins -  https://github.com/gmarik/Vundle.vim
 Plugin 'gmarik/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-fugitive'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 
 
