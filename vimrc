@@ -17,6 +17,10 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-fugitive'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'bling/vim-airline'
+Plugin 'scrooloose/syntastic'
+Plugin 'elzr/vim-json'
+" plugin for :Bdelete not closing window
+Plugin 'moll/vim-bbye'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -42,8 +46,31 @@ set noshowmode
 
 
 """
+" Syntastic settings
+"""
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+
+""
+" json-vim settings
+""
+
+"This setting turns off vim's newfangled concealing feature in json file.  I
+"I found it too distracting
+let g:vim_json_syntax_conceal = 0
+
+"""
 " Other settings
 """
+
+
 set expandtab "Indent with spaces
 set tabstop=4
 set shiftwidth=4
@@ -51,4 +78,21 @@ set softtabstop=4
 " set relativenumber
 set number
 
+" allow buffers to be in the backgroudn with unsaved changes
+set hidden 
+
+
 map <Leader>f :NERDTreeToggle<Enter>
+" \q to close current buffer (Using vimbye to avoid changing window layout)
+map <Leader>q :Bdelete<Enter>
+" Switch buffers
+map <S-h> :bp<Enter>
+map <S-l> :bn<Enter>
+map <S-j> :bn<Enter>
+map <S-k> :bp<Enter>
+" Move to window
+map <C-h> <C-w>h
+map <C-l> <C-w>l
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+
